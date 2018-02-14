@@ -103,7 +103,7 @@ listen=1
 ##(Save And Exit)
 
 
-cd ~/Astrumcoin/src
+cd ~/astrum/src
 
 To run Control Wallet do this
 ./Astrumd
