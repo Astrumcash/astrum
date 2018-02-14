@@ -62,7 +62,7 @@ sudo nano /etc/fstab
 
 cd ~
 git clone https://github.com/astrumcash/astrum
-cd ~/Astrum/src
+cd ~/astrum/src
 make -f makefile.unix # Headless
 
 ---Note edit as nano------
@@ -85,7 +85,7 @@ masternodeprivkey=privatekey
 ##(Save And Exit)
 
 
-cd ~/Astrum/src
+cd ~/astrum/src
 
 To run Control Wallet do this 
 ./Astrumd
