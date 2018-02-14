@@ -71,7 +71,7 @@ sudo nano /etc/fstab
 
 cd ~
 git clone https://github.com/astrumcash/astrum
-cd ~/Astrumcoin/src
+cd ~/astrum/src
 make -f makefile.unix # Headless
 
 ---Note edit as nano------
