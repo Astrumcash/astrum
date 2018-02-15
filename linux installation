@@ -1,0 +1,59 @@
+I have seen so many people having issues with installing the linux version that i decided to list setup a guide.
+This is also due to some errors I found while installing mine, so this should make it easier for everyone!
+
+I have included some extras that help bypass some of the issues and are not mentioned as dependencies on the documentation.
+
+sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
+
+On at least Ubuntu 14.04+ and Debian 7+ there are generic names for the individual boost development packages, so the following can be used to only install necessary parts of boost:
+
+sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
+
+These are the dependencies listed on Astrum repo
+
+Dependency Build Instructions: Ubuntu & Debian
+----------------------------------------------
+sudo apt-get install build-essential
+sudo apt-get install libssl-dev
+sudo apt-get install libdb++-dev
+sudo apt-get install libboost-all-dev
+sudo apt-get install libqrencode-dev
+
+Thia is a must to avoid errors
+
+sudo add-apt-repository ppa:bitcoin/bitcoin
+sudo apt-get update
+sudo apt-get install libdb4.8-dev libdb4.8++-dev
+
+sudo apt-get install libminiupnpc-dev
+sudo apt-get install libzmq3-dev
+
+git clone https://github.com/bitcoin-core/secp256k1.git
+
+cd /secp256k1
+$ ./autogen.sh
+$ ./configure
+$ make
+$ ./tests
+$ sudo make install  # optional
+
+git clone https://github.com/Astrumcash/astrum.git
+cd /astrum/src
+make -f makefile.unix
+
+you will probably get an error saying:
+
+/usr/bin/ld: cannot find -lgmp
+
+ to fix this run:
+ 
+ sudo apt-get install libgmp3-dev
+ 
+ After this run:
+ make -f makefile.unix
+ 
+ all should be installed and you can start your daemon
+ 
+ ./Astrum -daemon
+ 
+ Happy Masternoding
